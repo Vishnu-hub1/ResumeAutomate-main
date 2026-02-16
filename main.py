@@ -69,7 +69,18 @@ def process_context_for_richtext(context_data: dict) -> dict:
     processed_context = {}
     for key, value in context_data.items():
         # --- Handle target fields: RESPONSIBILITES (lists) ---
-        if key in ("PROFILE","KEY_CONTRIBUTION_UP", "KEY_CONTRIBUTION_FI", "KEY_CONTRIBUTION_MI", "KEY_CONTRIBUTION_LO", "KEY_CONTRIBUTION_AT") and isinstance(value, list):
+        if key in (
+    "SUMMARY",
+    "RESPONSIBILITES_AL",
+    "RESPONSIBILITES_ZB",
+    "RESPONSIBILITES_SM",
+    "PROFILE",
+    "KEY_CONTRIBUTION_UP",
+    "KEY_CONTRIBUTION_FI",
+    "KEY_CONTRIBUTION_MI",
+    "KEY_CONTRIBUTION_LO",
+    "KEY_CONTRIBUTION_AT",
+):
             processed_list = []
             for item in value:
                 if isinstance(item, str):
